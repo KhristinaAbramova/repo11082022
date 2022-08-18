@@ -1,1 +1,3 @@
-﻿Console.WriteLine("4Hello, World!");
+﻿double numberA = 10;
+double numberB = 5;
+Console.WriteLine(numberA / numberB);
