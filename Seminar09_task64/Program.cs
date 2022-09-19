@@ -7,13 +7,28 @@ Console.Write("Введите значение M: ");
 int N = int.Parse(Console.ReadLine());
 Console.Write("Введите значение N: ");
 int M = int.Parse(Console.ReadLine());
-Console.Write($"Натуральные числа в промежутке от {N} до {M} -> ");
+
+/* Console.Write($"Натуральные числа в промежутке от {N} до {M} -> ");
     if (M>N)
         for (int i = N; i <= M; i++)
         Console.Write($" {i}");  
         else
         for (int i = M; i <= N; i++)
-        Console.Write($" {i}");
+        Console.Write($" {i}"); */
 
-
-        
+//рекурсия
+void num(int N, int M)
+{
+ if (N ==M)
+ {
+    Console.WriteLine($" {N},");
+    return;
+ }
+ if (N < M)
+ {
+    Console.Write($" {N},");
+    num(N+1, M);
+ }
+}
+Console.Write($"Натуральные числа в промежутке от {N} до {M} -> ");
+num(N, M);        
