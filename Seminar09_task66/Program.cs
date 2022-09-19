@@ -4,30 +4,26 @@ M = 4; N = 8. -> 30 */
 
 
 Console.Clear();
-int m = InputNum("Введите m: ");
-int n = InputNum("Введите n: ");
-int temp = m;
-if (m > n) 
-{
-  m = n; 
-  n = temp;
-}
-PrintSum(m, n, temp=0);
+Console.Write("Введите значение M: ");
+int M = int.Parse(Console.ReadLine());
+Console.Write("Введите значение N: ");
+int N = int.Parse(Console.ReadLine());
+int sum = 0;
 
-void PrintSum(int m, int n, int sum)
+void Summ(int M, int N, int sum)
 {
-  sum = sum + n;
-  if (n <= m)
-  {
-    Console.Write($"Сумма натуральных элементов в заданном промежутке -> {sum} ");
-    return;
-  }
-  PrintSum(m, n - 1, sum);
+    if (M == N)
+    {
+      sum += M;
+      Console.WriteLine($" {sum}");
+      return;
+    }
+    if (M < N)
+    {
+      sum += M;
+      Summ(M+1, N, sum);
+    }
 }
-
-int InputNum(string input) 
-{
-  Console.Write(input);
-  int output = int.Parse(Console.ReadLine());
-  return output;
-}
+sum = 0;
+Console.Write($"Сумма натуральных элементов в промежутке от {M} до {N} ->  ");
+Summ(M, N, sum); 
