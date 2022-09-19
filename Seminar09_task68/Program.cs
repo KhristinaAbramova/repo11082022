@@ -2,21 +2,30 @@
 m = 2, n = 3 -> A(m,n) = 9 */
 
 Console.Clear();
-int m = InputNum("Введите m: ");
-int n = InputNum("Введите n: ");
-int function = Ack(m, n);
-Console.Write($"Результат = {function} ");
+Console.Write("Введите значение M: ");
+int M = int.Parse(Console.ReadLine());
+Console.Write("Введите значение N: ");
+int N = int.Parse(Console.ReadLine());
+Function(M, N);
 
-int Ack(int m, int n)
+void Function (int M, int N)
 {
-  if (m == 0) return n + 1;
-  else if (n == 0) return Ack(m - 1, 1);
-  else return Ack(m - 1, Ack(m, n - 1));
+    Console.Write($"Решение  ->  ");
+    Console.Write (Akkerman (M, N)); 
 }
 
-int InputNum(string input) 
+int Akkerman(int M, int N)
 {
-  Console.Write(input);
-  int output = int.Parse(Console.ReadLine());
-  return output;
+    if (M == 0)
+    {
+        return N + 1;
+    }
+    else if (N == 0 && M > 0)
+    {
+        return Akkerman(M - 1, 1);
+    }
+    else
+    {
+        return (Akkerman(M - 1, Akkerman(M, N - 1)));
+    }
 }
