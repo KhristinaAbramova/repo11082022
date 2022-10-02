@@ -5,3 +5,14 @@
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → [] */
 
+string[] Array = new string[4] {"hello", "2", "world", ":)"};
+int count = 0;
+for (int i = 0; i < Array.Length; i++)
+{
+    Console.Write($"{Array[i]}, ");
+    if(Array[i].Length < 4)
+    {
+        count++;
+    }
+}
+Console.WriteLine();
