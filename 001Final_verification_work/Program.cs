@@ -5,7 +5,7 @@
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → [] */
 
-string[] Array = new string[4] {"hello", "2", "world", ":)"};
+string[] Array = new string[4] {"hello", "122", "world", ":))"};
 int count = 0;
 for (int i = 0; i < Array.Length; i++)
 {
@@ -16,3 +16,15 @@ for (int i = 0; i < Array.Length; i++)
     }
 }
 Console.WriteLine();
+
+string[] Array1 = new string[count];
+int j = 0;
+for (int i = 0; i < Array.Length; i++)
+{
+    if(Array[i].Length < 4)
+    {
+        Array1[j]=Array[i];
+        Console.Write($"{Array1[j]}, ");
+        j++;
+    }
+}
